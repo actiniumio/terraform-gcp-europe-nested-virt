@@ -1,4 +1,4 @@
-# terraform on GCP europe - Nested Virtualization
+# terraform on GCP europe
 
 ## Single node VM with nested virtualization activated
 
