@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/actiniumio/terraform-gcp-europe-nested-virt.svg?style=svg)](https://circleci.com/gh/actiniumio/terraform-gcp-europe-nested-virt)
+
 # terraform on GCP europe
 
 ## Single node VM with nested virtualization activated
