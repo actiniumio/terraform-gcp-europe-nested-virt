@@ -1,21 +1,3 @@
-version: 2
-jobs:
-  validate-terraform-plan:
-    docker:
-      - image: circleci/terraform:0.11.8
-    environment:
-      - COMMIT_AUTHOR_EMAIL: "bot.actinium@gmail.com"
-    steps:
-      - checkout
-      - run:
-          name: Terraform Init
-          command: terraform init
-      - run:
-          name: Terraform Validate
-          command: terraform validate
-
-workflows:
-  version: 2
-  test-to-master:
-    jobs:
-      - validate-terraform-plan
+  - run:
+      name: Terraform Init
+      command: terraform init          
