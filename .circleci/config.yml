@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Store Service Account
-          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/../credentials/account.json      
+          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/account.json      
       - run:
           name: Terraform Init
           command: terraform init
