@@ -46,13 +46,13 @@ You can found all the Google Cloud Plartform Region on this [Here](https://cloud
 
 
 ```bash
-$gcloud compute machine-types list | grep europe-west1
-$gcloud compute machine-types list | grep europe-west2
-$gcloud compute machine-types list | grep europe-west3
-$gcloud compute machine-types list | grep europe-west4
-$gcloud compute machine-types list | grep europe-north1
+$ gcloud compute machine-types list | grep europe-west1
+$ gcloud compute machine-types list | grep europe-west2
+$ gcloud compute machine-types list | grep europe-west3
+$ gcloud compute machine-types list | grep europe-west4
+$ gcloud compute machine-types list | grep europe-north1
 ```
 
 ```bash
-$gcloud compute images list
+$ gcloud compute images list
 ```
