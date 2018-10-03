@@ -19,7 +19,7 @@ variable "region" {
 }
 
 variable "project-name" {
-  default = "corded-skill-214716"
+  default = ""
 }
 
 variable "disk-name" {
