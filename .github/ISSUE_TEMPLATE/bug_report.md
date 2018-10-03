@@ -25,56 +25,6 @@ Steps to reproduce the behaviour:
 > A clear and concise description of what you expected to happen.
 
 ---
-### Allspark informations
-
-> Informations about the control and allspark machines.
-
-- **Allspark**
-  - *version*
-
-```
-output of `git rev-parse HEAD`
-```
-
-  - *configuration*
-
-```yaml
-# allspark group_vars/* configurations
-```
-
-- **Control machine**
-  - *Operating system* :
-
-```
-output of `uname -a`
-```
-
-  - *Ansible version* :
-
-```
-output of `ansible --version`
-```
-
-  - *Vagrant version* (if used to reproduce the issue) :
-
-```
-output of `vagrant version`
-```
-
-- **Allspark server**
-  - *Operating system* :
-
-```
-output of `uname -a`
-```
-
-  - *Docker version* :
-
-```
-output of `docker version`
-```
-
----
 ### Additional context
 
 > Add any other informations about the problem here. (e.g: logs, screenshots)
