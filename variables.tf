@@ -19,7 +19,6 @@ variable "region" {
 }
 
 variable "project-name" {
-  default = ""
 }
 
 variable "disk-name" {

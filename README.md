@@ -37,7 +37,7 @@ zone = "${var.region}"
 
 ```bash
 $ terraform plan
-$ terraform apply -var 'yourprojectname'
+$ terraform apply -var 'key=yourprojectname'
 ```
 
 ## Appendix
