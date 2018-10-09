@@ -39,10 +39,6 @@ resource "google_compute_instance" "test" {
     }
   }
 
-  // Local SSD disk
-  scratch_disk {
-  }
-
   metadata {
     hostname = "test"
   }

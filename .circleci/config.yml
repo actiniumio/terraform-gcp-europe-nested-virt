@@ -15,7 +15,7 @@ jobs:
           command: terraform init
       - run:
           name: Terraform Validate
-          command: terraform validate
+          command: terraform validate -var 'project-name=$GCP_PROJECT_ID'
 
 workflows:
   version: 2
