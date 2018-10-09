@@ -37,8 +37,9 @@ zone = "${var.region}"
 
 ```bash
 $ terraform plan
-$ terraform apply -var 'key=yourprojectname'
+$ terraform apply -var 'project-name=yourprojectname'
 ```
+> yourprojectname refers to your GCP project ID
 
 ## Appendix
 
