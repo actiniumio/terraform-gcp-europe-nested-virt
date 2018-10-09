@@ -41,7 +41,7 @@ resource "google_compute_instance" "test" {
 
   boot_disk {
     initialize_params {
-      image = "${google_compute_image.${var.image-name}.self_link}"
+      image = "${google_compute_image.vagrantbuild.self_link}"
       size = "20"
     }
   }
