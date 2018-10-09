@@ -57,5 +57,7 @@ resource "google_compute_instance" "test" {
       // Ephemeral IP
     }
   }
-  create_timeout = "60m"
+  timeouts {
+  create = "60m"
+  }
 }
