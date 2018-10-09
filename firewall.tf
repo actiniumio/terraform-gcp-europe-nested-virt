@@ -49,19 +49,6 @@ resource "google_compute_firewall" "icmp" {
   source_ranges = ["0.0.0.0/0"]
 }
 
-resource "google_compute_firewall" "postgresql" {
-  name    = "${var.network}-firewall-postgresql"
-  network = "${google_compute_network.vagrant_network.name}"
-
-  allow {
-    protocol = "tcp"
-    ports    = ["5432"]
-  }
-
-  target_tags   = ["${var.network}-firewall-postgresql"]
-  source_ranges = ["0.0.0.0/0"]
-}
-
 resource "google_compute_firewall" "firewall-openshift-console" {
   name    = "${var.network}-firewall-openshift-console"
   network = "${google_compute_network.vagrant_network.name}"

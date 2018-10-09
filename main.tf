@@ -1,4 +1,4 @@
-resource "google_compute_disk" "vagrantdisk" {
+resource "google_compute_disk" "actiniumiodisk" {
   name  = "${var.disk-name}"
   type  = "pd-ssd"
   zone  = "${var.region["belgium-b"]}"
@@ -9,10 +9,10 @@ resource "google_compute_disk" "vagrantdisk" {
   }
 }
 
-resource "google_compute_image" "vagrantbuild" {
+resource "google_compute_image" "actiniumiobuild" {
   name = "${var.image-name}"
   family = "centos-7"
-  source_disk = "https://www.googleapis.com/compute/v1/projects/${var.project-name}/zones/${var.region["belgium-b"]}/disks/${var.disk-name}"
+  source_disk = "${google_compute_disk.actiniumiodisk.self_link}"
   licenses = [
     "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx",
   ]
@@ -21,8 +21,8 @@ resource "google_compute_image" "vagrantbuild" {
   }
 }
 
-resource "google_compute_instance" "test" {
-  name = "test"
+resource "google_compute_instance" "actiniumio-build-box" {
+  name = "${var.instance-name}"
   machine_type = "${var.vm_type["7point5gig"]}"
 
   zone = "${var.region["belgium-b"]}"
@@ -34,20 +34,19 @@ resource "google_compute_instance" "test" {
     "${var.network}-firewall-http",
     "${var.network}-firewall-https",
     "${var.network}-firewall-icmp",
-    "${var.network}-firewall-postgresql",
     "${var.network}-firewall-openshift-console",
     "${var.network}-firewall-secure-forward",
   ]
 
   boot_disk {
     initialize_params {
-      image = "${google_compute_image.vagrantbuild.self_link}"
+      image = "${google_compute_image.actiniumiobuild.self_link}"
       size = "20"
     }
   }
 
   metadata {
-    hostname = "test"
+    hostname = "${var.instance-name}"
   }
 
   network_interface {

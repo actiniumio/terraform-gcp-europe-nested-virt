@@ -22,11 +22,15 @@ variable "project-name" {
 }
 
 variable "image-name" {
-  default = "vagrantbuild"
+  default = "actiniumiobuild"
 }
 
 variable "disk-name" {
-  default = "vagrantdisk"
+  default = "actiniumdisk"
+}
+
+variable "instance-name" {
+  default = "actiniumio-build-box"
 }
 
 variable "subnetwork-region" {
