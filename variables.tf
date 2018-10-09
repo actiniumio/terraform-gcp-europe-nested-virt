@@ -21,6 +21,10 @@ variable "region" {
 variable "project-name" {
 }
 
+variable "image-name" {
+  default = "vagrantbuild"
+}
+
 variable "disk-name" {
   default = "vagrantdisk"
 }

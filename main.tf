@@ -10,7 +10,7 @@ resource "google_compute_disk" "vagrantdisk" {
 }
 
 resource "google_compute_image" "vagrantbuild" {
-  name = "vagrantbuild"
+  name = "${var.image-name}"
   family = "centos-7"
   source_disk = "https://www.googleapis.com/compute/v1/projects/${var.project-name}/zones/${var.region["belgium-b"]}/disks/${var.disk-name}"
   licenses = [
@@ -41,7 +41,7 @@ resource "google_compute_instance" "test" {
 
   boot_disk {
     initialize_params {
-      image = "${google_compute_image.vagrantbuild.self_link}"
+      image = "${google_compute_image.${var.image-name}.self_link}"
       size = "20"
     }
   }
