@@ -19,7 +19,10 @@ variable "region" {
 }
 
 variable "project-name" {
-  default = "molten-hall-214314"
+}
+
+variable "disk-name" {
+  default = "vagrantdisk"
 }
 
 variable "subnetwork-region" {

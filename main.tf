@@ -1,5 +1,5 @@
 resource "google_compute_disk" "vagrantdisk" {
-  name  = "vagrantdisk"
+  name  = "${var.disk-name}"
   type  = "pd-ssd"
   zone  = "${var.region["belgium-b"]}"
   image = "${var.os["centos-7.5"]}"
@@ -8,7 +8,7 @@ resource "google_compute_disk" "vagrantdisk" {
 resource "google_compute_image" "vagrantbuild" {
   name = "vagrantbuild"
   family = "centos-7"
-  source_disk = "https://www.googleapis.com/compute/v1/projects/molten-hall-214314/zones/${var.region["belgium-b"]}/disks/vagrantdisk"
+  source_disk = "https://www.googleapis.com/compute/v1/projects/${var.project-name}/zones/${var.region["belgium-b"]}/disks/${var.disk-name}"
   licenses = [
     "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx",
   ]
@@ -21,7 +21,7 @@ resource "google_compute_instance" "test" {
   zone = "${var.region["belgium-b"]}"
 
   min_cpu_platform = "Intel Haswell"
-  
+
   tags = [
     "${var.network}-firewall-ssh",
     "${var.network}-firewall-http",
