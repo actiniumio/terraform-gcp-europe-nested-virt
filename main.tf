@@ -3,6 +3,10 @@ resource "google_compute_disk" "vagrantdisk" {
   type  = "pd-ssd"
   zone  = "${var.region["belgium-b"]}"
   image = "${var.os["centos-7.5"]}"
+
+  timeouts {
+  create = "60m"
+  }
 }
 
 resource "google_compute_image" "vagrantbuild" {
@@ -12,6 +16,9 @@ resource "google_compute_image" "vagrantbuild" {
   licenses = [
     "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx",
   ]
+  timeouts {
+  create = "60m"
+  }
 }
 
 resource "google_compute_instance" "test" {
@@ -50,4 +57,5 @@ resource "google_compute_instance" "test" {
       // Ephemeral IP
     }
   }
+  create_timeout = "60m"
 }
