@@ -30,7 +30,6 @@ variable "disk-name" {
 }
 
 variable "instance-name" {
-  default = "actiniumio-build-box"
 }
 
 variable "subnetwork-region" {
