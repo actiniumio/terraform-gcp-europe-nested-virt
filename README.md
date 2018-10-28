@@ -39,7 +39,7 @@ zone = "${var.region}"
 
 ```bash
 $ terraform plan
-$ terraform apply -var 'project-name=yourprojectname'
+$ terraform apply -var 'project-name=yourprojectname' -var 'instance-name=actinium-centos7-box'
 ```
 > yourprojectname refers to your GCP project ID
 
