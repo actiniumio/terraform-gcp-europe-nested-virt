@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  validate-terraform-plan:
+  validate-plan:
     docker:
       - image: circleci/terraform:0.11.8
     environment:
@@ -15,10 +15,10 @@ jobs:
           command: terraform init
       - run:
           name: Terraform Validate
-          command: terraform validate -var "project-name=$GCP_PROJECT_ID"
+          command: terraform validate -var "project-name=$GCP_PROJECT_ID" -var "instance-name=actinium-centos7-box"
 
 workflows:
   version: 2
-  test-to-master:
+  validate:
     jobs:
-      - validate-terraform-plan
+      - validate-plan
