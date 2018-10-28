@@ -45,6 +45,14 @@ $ terraform apply -var 'project-name=yourprojectname' -var 'instance-name=actini
 
 ## Appendix
 
+### Supported Operating System
+
+| Operating System            |
+| --------------------------- |
+| CentOS 7 - Release 7.5.1804 |
+
+### Supported Region
+
 You can found all the Google Cloud Plartform Region on this [Here](https://cloud.google.com/compute/docs/regions-zones/)
 
 
