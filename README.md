@@ -4,7 +4,7 @@
 
 ## Single node VM with nested virtualization activated
 
-> The Devops Team use this terraform plan to provision GCP with circleci to build Vagrant Box
+> The Devops Team use this terraform plan to provision GCP with circleci to build Vagrant Box under QEMU/KVM Hypervizor
 
 This demonstrates the provisioning of a single compute VM(`7point5gig`) with a custom centos-7.5 based on the official image (these can be changed inside the `variables.tf` file) in GCP inside a custom created VPC with firewall rules attached to it.
 
