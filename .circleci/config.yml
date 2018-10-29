@@ -2,7 +2,7 @@ version: 2
 jobs:
   validate-plan:
     docker:
-      - image: circleci/terraform:0.11.8
+      - image: circleci/terraform:0.11.10
     environment:
       - COMMIT_AUTHOR_EMAIL: "bot.actinium@gmail.com"
     steps:
