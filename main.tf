@@ -23,7 +23,7 @@ resource "google_compute_image" "actiniumiobuild" {
 
 resource "google_compute_instance" "actiniumio-build-box" {
   count = "$var.vmcount"
-  name = "${var.instance-name}-${cound.index + 1}"
+  name = "${var.instance-name}-${cound.index}"
   machine_type = "${var.vm_type["7point5gig"]}"
 
   zone = "${var.region["belgium-b"]}"
