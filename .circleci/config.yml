@@ -15,7 +15,7 @@ jobs:
           command: terraform init
       - run:
           name: Terraform Validate
-          command: terraform validate -var "project-name=$GCP_PROJECT_ID" -var "instance-name=actinium-centos7-box"
+          command: terraform validate -var "project-name=$GCP_PROJECT_ID" -var "vmcount=3"
 
 workflows:
   version: 2
