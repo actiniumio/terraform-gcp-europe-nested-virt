@@ -29,7 +29,11 @@ variable "disk-name" {
   default = "actiniumdisk"
 }
 
+variable "vmcount" {
+}
+
 variable "instance-name" {
+  "default" = "actinium-build-box"
 }
 
 variable "subnetwork-region" {

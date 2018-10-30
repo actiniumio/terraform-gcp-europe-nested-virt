@@ -14,34 +14,15 @@ $ terraform init
 
 This will create the `terraform.tfstate` file
 
-**NOTE**
-
-You can create multiple instances of the same type by modifying you `main.tf` like
-
-```hcl
-...
-...
-name = "${var.instance-name}"
-
-## for a setup having multiple instances of the same type, you can do
-## the following, there would be 2 instances of the same configuration
-## provisioned
-# count        = 2
-# name         = "${var.instance-name}-${count.index}"
-machine_type = "${var.vm_type["1point7gig"]}"
-
-zone = "${var.region}"
-...
-...
-```
-
 ## Running it
 
 ```bash
 $ terraform plan
-$ terraform apply -var 'project-name=yourprojectname' -var 'instance-name=actinium-centos7-box'
+$ terraform apply -var 'project-name=yourprojectname' -var 'vmcount=numberofvm'
 ```
 > yourprojectname refers to your GCP project ID
+
+> numberofvm is the number of VM you want to provision, for example here you will create 3 VM
 
 ## Appendix
 
