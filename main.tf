@@ -41,7 +41,7 @@ resource "google_compute_instance" "actinium-build-box" {
   boot_disk {
     initialize_params {
       image = "${google_compute_image.actiniumbuild.self_link}"
-      size = "20"
+      type  = "pd-ssd"
     }
   }
 
