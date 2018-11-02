@@ -1,8 +1,8 @@
 resource "google_compute_disk" "actiniumdisk" {
   name  = "${var.disk-name}"
   type  = "pd-ssd"
-  zone  = "${var.region["belgium-b"]}"
-  image = "${var.os["centos-7.5"]}"
+  zone  = "${var.region}"
+  image = "${var.os}"
 
   timeouts {
   create = "60m"
@@ -11,7 +11,6 @@ resource "google_compute_disk" "actiniumdisk" {
 
 resource "google_compute_image" "actiniumbuild" {
   name = "${var.image-name}"
-  family = "centos-7"
   source_disk = "${google_compute_disk.actiniumdisk.self_link}"
   licenses = [
     "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx",
