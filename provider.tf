@@ -1,5 +1,5 @@
 provider "google" {
   credentials = "${file("${path.module}/account.json")}"
   project     = "${var.project-name}"
-  region      = "${var.region["belgium-b"]}"
+  region      = "${var.region}"
 }

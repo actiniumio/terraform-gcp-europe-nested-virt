@@ -1,4 +1,4 @@
-resource "google_compute_disk" "actiniumiodisk" {
+resource "google_compute_disk" "actiniumdisk" {
   name  = "${var.disk-name}"
   type  = "pd-ssd"
   zone  = "${var.region["belgium-b"]}"
@@ -9,10 +9,10 @@ resource "google_compute_disk" "actiniumiodisk" {
   }
 }
 
-resource "google_compute_image" "actiniumiobuild" {
+resource "google_compute_image" "actiniumbuild" {
   name = "${var.image-name}"
   family = "centos-7"
-  source_disk = "${google_compute_disk.actiniumiodisk.self_link}"
+  source_disk = "${google_compute_disk.actiniumdisk.self_link}"
   licenses = [
     "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx",
   ]
@@ -21,12 +21,12 @@ resource "google_compute_image" "actiniumiobuild" {
   }
 }
 
-resource "google_compute_instance" "actiniumio-build-box" {
+resource "google_compute_instance" "actinium-build-box" {
   count = "${var.vmcount}"
   name = "${var.instance-name}-${count.index + 1}"
   machine_type = "${var.vm_type["7point5gig"]}"
 
-  zone = "${var.region["belgium-b"]}"
+  zone = "${var.region}"
 
   min_cpu_platform = "Intel Haswell"
 
@@ -41,7 +41,7 @@ resource "google_compute_instance" "actiniumio-build-box" {
 
   boot_disk {
     initialize_params {
-      image = "${google_compute_image.actiniumiobuild.self_link}"
+      image = "${google_compute_image.actiniumbuild.self_link}"
       size = "20"
     }
   }
@@ -51,7 +51,7 @@ resource "google_compute_instance" "actiniumio-build-box" {
   }
 
   network_interface {
-    subnetwork = "${google_compute_subnetwork.vagrant_network_subnetwork.name}"
+    subnetwork = "${google_compute_subnetwork.actinium_network_subnetwork.name}"
 
     access_config {
       // Ephemeral IP
