@@ -23,7 +23,7 @@ resource "google_compute_image" "actiniumbuild" {
 resource "google_compute_instance" "actinium-build-box" {
   count = "${var.vmcount}"
   name = "${var.instance-name}-${count.index + 1}"
-  machine_type = "${var.vm_type["7point5gig"]}"
+  machine_type = "${var.vm_type}"
 
   zone = "${var.region}"
 
