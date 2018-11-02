@@ -60,6 +60,11 @@ You can found all the Google Cloud Plartform Region on this [Here](https://cloud
 | netherlands | europe-west4          | a / b / c | europe-west4-a  |
 | finland     | europe-north1         | a / b / c | europe-north1-a |
 
+### Quotas and limits free asccount GCP
+
+All Region : 24vCPU
+Each Region: 8vCPU
+
 ### VM Type
 
 | VM Type        | GCP Type      |
