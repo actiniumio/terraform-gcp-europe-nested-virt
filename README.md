@@ -33,7 +33,7 @@ $ terraform apply -var 'project-name=mykey' -var 'vmcount=mykey' -var 'region=my
 | subnetwork-region | See Appendix      | Name of the subnetwork of your VPC         |
 | vm_type           | See Appendix      | The size of the VM you want to provision   |
 | os                | See Appendix      | The Operating System you want to provision |
-| image-name        | actiniumimg     |                                            |
+| image-name        | actiniumimg       |                                            |
 | disk-name         | actiniumdisk      |                                            |
 
 ## Appendix
