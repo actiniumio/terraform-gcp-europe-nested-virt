@@ -9,7 +9,7 @@ resource "google_compute_disk" "actiniumdisk" {
   }
 }
 
-resource "google_compute_image" "actiniumbuild" {
+resource "google_compute_image" "actiniumimg" {
   name = "${var.image-name}"
   source_disk = "${google_compute_disk.actiniumdisk.self_link}"
   licenses = [
@@ -40,8 +40,9 @@ resource "google_compute_instance" "actinium-build-box" {
 
   boot_disk {
     initialize_params {
-      image = "${google_compute_image.actiniumbuild.self_link}"
+      image = "${google_compute_image.actiniumimg.self_link}"
       type  = "pd-ssd"
+      size  = "${var.disk-size}"
     }
   }
 

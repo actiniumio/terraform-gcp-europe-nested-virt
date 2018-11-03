@@ -27,3 +27,6 @@ variable "vm_type" {
 
 variable "os" {
 }
+
+variable "disk-size" {
+}

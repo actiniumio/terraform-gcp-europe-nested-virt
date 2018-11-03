@@ -13,7 +13,7 @@ jobs:
           command: terraform init
       - run:
           name: Terraform Validate
-          command: terraform validate -var "project-name=$GCP_PROJECT_ID" -var 'vmcount=3' -var "region=$GCP_PROJECT_ZONE" -var 'instance-name=actinium-build' -var 'subnetwork-region=europe-west1' -var 'network=geekhomeinside-network' -var 'vm_type=n1-standard-2' -var 'os=centos-7-v20180815' -var 'image-name=actiniumimg' -var 'disk-name=actiniumdisk'
+          command: terraform validate -var "project-name=$GCP_PROJECT_ID" -var 'vmcount=3' -var "region=$GCP_PROJECT_ZONE" -var 'instance-name=actinium-build' -var 'subnetwork-region=europe-west1' -var 'network=geekhomeinside-network' -var 'vm_type=n1-standard-2' -var 'os=centos-7-v20180815' -var 'image-name=actiniumimg' -var 'disk-name=actiniumdisk' -var 'disk-size=20'
 
 workflows:
   version: 2
